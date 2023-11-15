@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">app-praca</string>
+    <string name="title">Praça da Massangana</string>
+    <string name="hello">Hello!</string>
+    <string name="estabelecimentos">ESTABELECIMENTOS</string>
+    <string name="doces">Doces!</string>
+    <string name="salgados">Salgados!</string>
+    <string name="Geral">Geral!</string>
+
+</resources>
