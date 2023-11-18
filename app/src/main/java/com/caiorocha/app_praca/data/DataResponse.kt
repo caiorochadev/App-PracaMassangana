@@ -1,6 +1,6 @@
 package com.caiorocha.app_praca.data
 
-data class addResponse (
+data class DataResponse (
     val id: Int,
     val urlPhoto: String,
     val nome: String,

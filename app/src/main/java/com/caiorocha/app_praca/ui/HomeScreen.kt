@@ -37,7 +37,7 @@ fun HomeScreen(navigateToMainScreen: () -> Unit) {
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Praça da Massangana",
+                text = "Lanches da Praça da Massangana",
                 style = MaterialTheme.typography.headlineLarge,
                 color = Color.Black
             )
