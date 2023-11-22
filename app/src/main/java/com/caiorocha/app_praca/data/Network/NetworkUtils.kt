@@ -1,4 +1,4 @@
-package com.caiorocha.app_praca.Network
+package com.caiorocha.app_praca.data.Network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

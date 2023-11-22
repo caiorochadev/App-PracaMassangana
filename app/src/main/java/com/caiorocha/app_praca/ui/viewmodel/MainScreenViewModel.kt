@@ -2,24 +2,29 @@ package com.caiorocha.app_praca.ui.viewmodel
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
+import com.caiorocha.app_praca.R
+import com.caiorocha.app_praca.data.repository.ListItemDB
 
-
-data class ListItem(val id: Int,
-                    val content: String
-)
 
 // ViewModel para gerenciar o estado da lista
 class MainViewModel : ViewModel() {
-    private val _listItems = mutableStateListOf<ListItem>()
+    val _listItemDBS = mutableStateListOf<ListItemDB>()
 
-    val listItems: List<ListItem>
-        get() = _listItems
+    val listItemDBS: List<ListItemDB>
+        get() = _listItemDBS
 
-    init {
+    init{
         // Inicializa a lista com alguns itens de exemplo
         repeat(10) {
-            _listItems.add(ListItem(it, "Item $it"))
+            _listItemDBS.add(
+                ListItemDB(
+                urlPhoto = R.drawable.ic_launcher_foreground,
+                nome = "Nome",
+                tipo = "Tipo Exemplo",
+                horario = "Horário Exemplo",
+                referencia = "Referência Exemplo"
+            )
+            )
         }
     }
-
 }

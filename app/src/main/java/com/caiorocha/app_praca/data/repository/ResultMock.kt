@@ -1,4 +1,4 @@
-package com.caiorocha.app_praca.data
+package com.caiorocha.app_praca.data.repository
 
 class ResultMock (
     val name : String,

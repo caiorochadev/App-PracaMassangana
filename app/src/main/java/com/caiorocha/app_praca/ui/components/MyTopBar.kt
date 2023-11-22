@@ -14,14 +14,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.caiorocha.app_praca.ui.viewmodel.NowViewModel
+import com.caiorocha.app_praca.ui.viewmodel.MainViewModel
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyTopBar(navigateToHomeScreen: () -> Unit) {
-    val viewModel: NowViewModel = viewModel()
+    val viewModel: MainViewModel = viewModel()
     Scaffold(
         topBar = {
             TopAppBar(
@@ -67,7 +67,7 @@ fun MyTopBar(navigateToHomeScreen: () -> Unit) {
                     .fillMaxSize() // Certifique-se de que o conteúdo ocupa o máximo de espaço possível
             ) {
                 // Lista de itens
-                ItemList(items = viewModel.results)
+                ItemList(items = viewModel.listItemDBS)
                 Spacer(modifier = Modifier.height(16.dp))
             }
         }

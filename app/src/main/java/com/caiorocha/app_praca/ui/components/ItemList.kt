@@ -15,12 +15,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.caiorocha.app_praca.R
-import com.caiorocha.app_praca.data.DataResponseMock
+import com.caiorocha.app_praca.data.repository.ListItemDB
 
 @Composable
-fun ItemList(items: List<DataResponseMock>) {
+fun ItemList(items: List<ListItemDB>) {
     // Composable que exibe a lista de itens usando LazyColumn
     Column(
         modifier = Modifier
@@ -43,24 +44,39 @@ fun ItemList(items: List<DataResponseMock>) {
                             .size(width = 200.dp, height = 200.dp)
                             .align(Alignment.CenterHorizontally)
                     )
-                    item.results.forEach { result ->
-                        Text(
-                            text = "Name: ${result.name}",
-                            modifier = Modifier
-                                .padding(8.dp),
-                            color = Color.Black
-                        )
-                    }
-                    item.results.forEach { result ->
-                        Text(
-                            text = "Email: ${result.url}",
-                            modifier = Modifier
-                                .padding(8.dp),
-                            color = Color.Black
-                        )
-                    }
+                    Text(
+                        text = "Photo: ${item.urlPhoto}",
+                        modifier = Modifier.padding(8.dp),
+                        color = Color.Black
+                    )
+                    Text(
+                        text = "Nome: ${item.nome}",
+                        modifier = Modifier.padding(8.dp),
+                        color = Color.Black
+                    )
+                    Text(
+                        text = "Tipo: ${item.tipo}",
+                        modifier = Modifier.padding(8.dp),
+                        color = Color.Black
+                    )
+                    Text(
+                        text = "Horario: ${item.horario}",
+                        modifier = Modifier.padding(8.dp),
+                        color = Color.Black
+                    )
+                    Text(
+                        text = "Referencia: ${item.referencia}",
+                        modifier = Modifier.padding(8.dp),
+                        color = Color.Black
+                    )
                 }
             }
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewItemList() {
+    //ItemList{}
 }

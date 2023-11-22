@@ -2,30 +2,46 @@ package com.caiorocha.app_praca.ui.viewmodel
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
-import com.caiorocha.app_praca.data.DataResponseMock
-import com.caiorocha.app_praca.data.ResultMock
 
-// ViewModel para gerenciar o estado da lista
+data class DataResponse(
+    val urlPhoto: String?,
+    val nome: String?,
+    val tipo: String,
+    val horario: String,
+    val referencia: String
+)
 class NowViewModel : ViewModel() {
 
-    val results: List<DataResponseMock>
+    val results: List<DataResponse>
         get() = _listResults
-
 
     companion object {
 
-        fun init(name: String, url: String) {
-            getAllResults(name, url)
+        fun init(
+            nome: String?,
+            url: String?,
+            tipo: String,
+            horario: String,
+            referencia: String
+        ) {
+            getAllResults(nome, url, tipo, horario, referencia)
         }
 
-        val _listResults = mutableStateListOf<DataResponseMock>()
+        val _listResults = mutableStateListOf<DataResponse>()
 
-        private fun getAllResults(name: String, url: String) {
-            val result = DataResponseMock(
-                count = 10,
-                next = "próximo",
-                previous = "anterior",
-                results = listOf(ResultMock(name = name, url = url))
+        private fun getAllResults(
+            nome: String?,
+            url: String?,
+            tipo: String,
+            horario: String,
+            referencia: String
+        ) {
+            val result = DataResponse(
+                urlPhoto = url,
+                nome = nome,
+                tipo = tipo,
+                horario = horario,
+                referencia = referencia
             )
 
             _listResults.add(result)

@@ -11,7 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.caiorocha.app_praca.Network.getListData
 import com.caiorocha.app_praca.ui.HomeScreen
 import com.caiorocha.app_praca.ui.MainScreen
 import com.caiorocha.app_praca.ui.theme.ApppracaTheme
@@ -26,8 +25,7 @@ class MainActivity : ComponentActivity() {
             //chamadas COMPOSE
             ApppracaTheme {
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
                 ) {
                     val navController = rememberNavController()
 
@@ -41,12 +39,13 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
+            //CallFireBase()
+            //FirebaseDataManager()
             //chamada da API
-            getListData()
+            //getListData()
         }
     }
 }
-
 
 
 

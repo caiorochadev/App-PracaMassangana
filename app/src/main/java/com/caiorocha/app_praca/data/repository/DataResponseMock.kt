@@ -1,4 +1,4 @@
-package com.caiorocha.app_praca.data
+package com.caiorocha.app_praca.data.repository
 
 data class DataResponseMock(
     val count: Int,
